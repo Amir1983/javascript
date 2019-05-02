@@ -4,9 +4,56 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="style.css">
+
 <title>Javascript</title>
+<script src="script.js"></script>
  </head>
  <body>
-     
+     <h1 id="top">Mein erstes Javascript</h1>
+     <h2 id="neu">Hier kommt die Begrüßung!</h2>
+     <h3 id="zahl">Zählen</h3>
+     <!--Hier wird Inline Javascript verwendet-->
+     <button type="button" onclick="alert(`Hat geklappt`);">Klick mich!</button><br>
+     <button type="button" onclick="alert(`Hallo Amir`);">Begrüßung</button>
+     <button type="button" id="mybutton">Neuer Button</button>
+     <button type="button" id="click">Hier klicken</button>
+     <button type="button" id="textchange">Text Ändern</button>
+     <button type="button" id="anders">hallo</button>
+     <button type="button" id="zahlen">zählen</button>
+     <button type="button" id="reset">reset</button><br>
+     <button type="button" id="versuch" onclick="ja();">Versuch</button>
+     <!--Hier wird Internal Javascript verwendet-->
+     <script>
+    var name = "Amir";
+    var anzahl = 0;
+     document.getElementById("mybutton").onclick = function(){
+    alert("Das funktioniert");
+    }
+    document.getElementById("click").onclick = function(){
+    console.log("Ich stehe in der Konsole");
+    }
+
+    document.getElementById("textchange").onclick = function(){
+    document.getElementById("top").innerHTML = "Hallo Amir";
+    }
+
+    document.getElementById("anders").onclick = function(){
+    document.getElementById("neu").innerHTML = "Hallo " + name;
+    }
+    document.getElementById("zahlen").onclick = function(){
+        anzahl = anzahl + 1;
+        //anzahl ++; gleicher effekt//
+        //anzahl += 1; auch gleicher effekt//
+    document.getElementById("zahl").innerHTML = "Anzahl Klick: " + anzahl;
+    }
+
+    document.getElementById("reset").onclick = function(){
+        anzahl = 0;
+    document.getElementById("zahl").innerHTML = "Anzahl Klick: " + anzahl;
+    }
+
+    
+     </script>
+
  </body>   
 </html>

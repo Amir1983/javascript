@@ -1,0 +1,3 @@
+function ja() {
+    alert("Hallo");
+}
