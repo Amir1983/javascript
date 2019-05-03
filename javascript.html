@@ -22,8 +22,118 @@
      <button type="button" id="zahlen">zählen</button>
      <button type="button" id="reset">reset</button><br>
      <button type="button" id="versuch" onclick="ja();">Versuch</button>
+
+     <p id="check">Hallo ..... </p>
+     <input type="text" name="name" id="name">
+     <p>Dein Alter ist?</p>
+     <input type="number" name="alter" id="alterEingabe"><br>
+     <button type="button" id="neuerButton">Übermitteln</button><br>
+     <p id="anfrage">Ergebniss:</p>
+     <input type="number" id="zahlenEingabe">
+     <button type="button" id="rechnen" onclick= "berechnung();">Berechnen</button>
+     <p id="läuft">Berechnung</p>
+     <input type="number" id="zahlEingabe1">
+     <button type="button" id="berechnung1" >Ergebniss</button>
+     <p id="Rechner">Taschenrechner</p>
+     <input type="number" id="erstezahl">
+     <input type="number" id="zweitezahl"><br>
+     <button type="button" id="zusammenrechnen" onclick="addieren();">Zusammenrechnen</button>
      <!--Hier wird Internal Javascript verwendet-->
      <script>
+
+
+                function addieren(parameter1, parameter2){
+                    parameter1 = document.getElementById("erstezahl").value;
+                    parameter2 = document.getElementById("zweitezahl").value;
+                    document.getElementById("Rechner").innerHTML = 
+                    "Ergebniss lautet: " + (parseInt(parameter1) + parseInt(parameter2));
+                }
+
+
+                document.getElementById("berechnung1").onclick = function() {
+                 var zahlEingabe1 = document.getElementById("zahlEingabe1").value;
+                 var zahlumwandlung = parseInt(zahlEingabe1);
+                 document.getElementById("läuft").innerHTML = 
+                 "Ergebniss: " + (15+zahlumwandlung);
+                }
+         
+           
+         
+         function berechnung(){
+             var zahlEingabe = document.getElementById("zahlenEingabe").value;
+             var Zahlergebniss = ((zahlEingabe*zahlEingabe));
+             document.getElementById("anfrage").innerHTML = 
+             "Ergebniss: " + Zahlergebniss;
+         }
+
+         var zahl = 15;
+         function hochrechnen(){
+             console.log(zahl*zahl*zahl);
+             console.log("Quadrieren: "+ (zahl*zahl));
+         }
+        
+
+         var zahlenArray = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+         //Anzahl von Inhalt
+         console.log(zahlenArray.length);
+         var handyHersteller = new Array("Samsung", "Apple", "Huawai", "Nokia", "Loop");
+         console.log(handyHersteller.length);
+         //letzte Element wird entfernt
+         console.log(handyHersteller.pop());
+         //Element wird hinzugefügt
+         handyHersteller.push("Magic");
+         console.log(handyHersteller);
+         //Erste Element wird entfernt
+         handyHersteller.shift();
+         console.log(handyHersteller);
+         //Element wird an erster stelle hinzugefügt. Mit Schreibweise xxxx.unshift(["Schrott", "Schrott2"])
+         //können mehrere Element als eigene Liste hinzugefügt werden
+         handyHersteller.unshift("Schrott");
+         console.log(handyHersteller);
+         // hier kannst du ein Element an einer bestimmten stelle löschen oder hinzufügen
+         handyHersteller.splice(1,0, "neuesHandy");
+         console.log(handyHersteller);
+         //Hier werden die Elemente Sortiert
+         handyHersteller.sort();
+         console.log(handyHersteller);
+         // Hier werden die Elemente Rückwärts sortiert
+         handyHersteller.reverse();
+         console.log(handyHersteller);
+         //Hier werden die Elemente zu einen String umgewandelt
+         console.log(handyHersteller.toString());
+         //Hier wird ein Element dazwischen gesetzt
+         console.log(handyHersteller.join(" ! "));
+
+         var samsungReihe = new Array(4);
+
+         samsungReihe[0] = "Galaxy s1";
+
+         samsungReihe[1] = "Galaxy s2";
+
+         samsungReihe[2] = "Galaxy s3";
+
+         samsungReihe[3] = "Galaxy s4";
+    
+
+    document.getElementById("neuerButton").onclick = function() {
+        var name = document.getElementById("name").value;
+        var alter = document.getElementById("alterEingabe").value;
+        var text = " ";
+        if (alter <= 14) {
+            text = " Du darfst bis 20 Uhr raus."
+        }
+        else if (alter <= 16){
+            text = " Du darfst bis 22 Uhr raus."
+        }else if(alter <18){ 
+            text = " Du darfst bis 24 Uhr raus."
+        }else {
+            text = " Du darfst so lange du magst raus."
+        }
+        document.getElementById("check").innerHTML = 
+        "Hallo " + name + ", dein Alter ist " + alter + ". " + text;
+    }
+
+
     var name = "Amir";
     var anzahl = 0;
      document.getElementById("mybutton").onclick = function(){
