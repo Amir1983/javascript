@@ -1,0 +1,50 @@
+#kopf{
+    background-color: rgb(39, 106, 194);
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0px;
+    color: white;
+}
+
+.korregieren{
+    width: 100%;
+    margin-left: 0px;
+    
+}
+
+.buttonstyle{
+text-align: center;
+margin-top: 20px;
+
+}
+
+.stylen{
+    background-color:  rgb(39, 106, 194);
+    height: 50px;
+    width: 130px;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+.stylen:hover{
+    background-color: green;
+}
+
+.zentrieren{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.textstyle{
+    font-style: italic;
+    text-align: left;
+    
+}
+
+.fensterstyle{
+    margin: auto;
+    width: 35%;
+}

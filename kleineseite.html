@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+ <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style2.css">
+
+<title>Javascript</title>
+<script src="script.js"></script>
+ </head>
+ <body>
+<div id="kopf">
+    <h1 class="korregieren">Bekannte Zitate</h1>
+</div>
+<div class="buttonstyle"><button class="stylen" type="button" id="zitatwechsel"
+    onclick="changeZitat();" > Nächstes Zitat</button></div>
+ <div class="fensterstyle">   
+<h2 class="zentrieren" id="dieZitate"></h2><br>
+<h3 class="textstyle" id="autor"></h3>
+</div>
+
+
+<script>
+var autoren = ["Amir", "Joanna", "Kian", "Amin", "Leile",];
+var Zitate = ["Die Welt ist so schön, wie man es selber sehen möchte.", "Man ist so Jung wie man sich fühlt.",
+ "Die Welt kannst du dir so gestalten wie du es möchtest.", "Alle guten Dinge sind 3.",
+ "Liebe ist Mächtiger als Hass."];
+function changeZitat(){
+var anzahl = Zitate.length;
+var zufallszahl = Math.floor (Math.random()*anzahl);
+var erwaehntesZitat;   
+var zufallsZitat = Zitate[zufallszahl];
+var zufallsAutor = autoren[zufallszahl];
+    zufallszahl = Math.floor (Math.random()*anzahl);
+    document.getElementById("dieZitate").innerHTML = zufallsZitat;
+    document.getElementById("autor").innerHTML = zufallsAutor;
+    while (zufallszahl == erwaehntesZitat){
+        zufallszahl = Math.floor (Math.random()*anzahl);
+    }
+    erwaehntesZitat = zufallszahl;
+    
+}
+//Das ist eine weitere Möglichkeit
+/*var erwaehntesZitat;   
+var zufallsZitat;
+var autoren = ["Amir", "Joanna", "Kian", "Amin", "Leile",];
+var Zitate = ["Die Welt ist so schön, wie man es selber sehen möchte.", "Man ist so Jung wie man sich fühlt.",
+ "Die Welt kannst du dir so gestalten wie du es möchtest.", "Alle guten Dinge sind 3.",
+ "Liebe ist Mächtiger als Hass."];
+function changeZitat(){
+    zufallszahl = Math.floor (Math.random()*5);
+    document.getElementById("dieZitate").innerHTML = Zitate[zufallszahl];
+    while (zufallszahl == erwaehntesZitat){
+        zufallszahl = Math.floor (Math.random()*5);
+    }
+    erwaehntesZitat = zufallszahl;
+    if(zufallszahl == 0){
+        document.getElementById("autor").innerHTML = autoren[0];
+        }
+    else if(zufallszahl == 1){
+        document.getElementById("autor").innerHTML = autoren[1];
+    }
+    else if(zufallszahl == 2){
+        document.getElementById("autor").innerHTML = autoren[2];
+    }
+    else if(zufallszahl == 3){
+        document.getElementById("autor").innerHTML = autoren[3];
+    }
+
+    else if(zufallszahl == 4){
+        document.getElementById("autor").innerHTML = autoren[4];
+    }
+
+}*/
+
+</script>
+</body>
+
+</html>

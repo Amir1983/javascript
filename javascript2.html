@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+ <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<title>Javascript2</title>
+<script src="script.js"></script>
+ </head>
+ <body>
+     <h1 id="zufall">Klicke hier um eine zufällige Zahl zu erhalten</h1>
+     <button type="button" id="derButton" onclick="generator();">Klick hier</button><br>
+     <h1 id="zufall1">Klicke hier um eine zufällige Zahl zu erhalten</h1>
+     <button type="button" id="derButton1" onclick="generator1();">Klick hier</button><br>
+<script>
+
+        var zufallsZahl;
+        function generator(){
+            zufallsZahl =Math.floor (Math.random()*10);
+            document.getElementById("zufall").innerHTML = 
+            "Die Zufallszahl lautet: <br>" + zufallsZahl;
+        }
+
+        document.getElementById("zufall").style.color = `rgb(212, 167, 106)`
+
+        var zufallsZahl1;
+        function generator1(){
+            zufallsZahl1 = Math.floor (Math.random()*10);
+            document.getElementById("zufall1").innerHTML = "Die Zufallszahl Lautet: " + zufallsZahl1;
+            zufallsFarbe1 = Math.floor (Math.random()*256);
+            zufallsFarbe2 = Math.floor (Math.random()*256);
+            zufallsFarbe3 = Math.floor (Math.random()*256);
+
+            document.getElementById("zufall1").style.color = `rgb(`+ zufallsFarbe1 + `,` +  zufallsFarbe2 + `,` + zufallsFarbe3 + `)`;
+        }
+
+
+
+
+        for(aufzaehlung = 0; aufzaehlung < 10; aufzaehlung ++){
+            document.write("Zählerwert ist: " + aufzaehlung + "<br><br>");
+        }
+        
+        for(neuaufzaehlung = 10; neuaufzaehlung > 0; neuaufzaehlung --){
+            document.write("Zählerwert ist: " + neuaufzaehlung + "<br>");
+        }
+
+        var freunde = ["Frank", "Michael", "Hans", "Ute"];
+        var len = freunde.length;
+        var text = "";
+        for(i=0; i<len; i++){
+            text += freunde[i] + "<br>";
+        }
+        document.write(text);
+        var eingabeFenster = "";
+        var eingabeAnzahl = 0;
+        var ergebnis = 0; 
+        var dieEingabe;
+        while(eingabeFenster != "0"){
+              eingabeFenster = prompt("Hier bitte die Zahl eingeben! Mit 0 Beenden");
+              dieEingabe = parseInt(eingabeFenster);
+              if(dieEingabe != 0){
+                ergebnis += dieEingabe;
+                eingabeAnzahl++;
+               }
+            if(dieEingabe != parseInt(eingabeFenster)){
+                document.write("Bitte eine Zahl Eingeben, da Buchstaben und Sonderzeichen einen Fehler verursachen <br> ");
+                break;
+            }
+        }       
+
+            var gesamtwert = ergebnis/eingabeAnzahl;
+            document.write("Der Durchschnitt ist " + gesamtwert); 
+</script>
+ </body>
+
+ </html>

@@ -37,9 +37,23 @@
      <p id="Rechner">Taschenrechner</p>
      <input type="number" id="erstezahl">
      <input type="number" id="zweitezahl"><br>
-     <button type="button" id="zusammenrechnen" onclick="addieren();">Zusammenrechnen</button>
+     <button type="button" id="zusammenrechnen" onclick="addieren();">Zusammenrechnen</button><br>
+    <p>Berechne den Durchschnitt</p>
+
      <!--Hier wird Internal Javascript verwendet-->
      <script>
+
+                var zaehler = 0;
+                /*do{
+                    zaehler++;
+                    document.write("<br>Zähler ist bei: " + zaehler);
+
+                }while(zaehler <= 10);*/
+
+                while(zaehler < 10){
+                    zaehler ++;
+                    document.write("<br>zähler ist bei: " + zaehler);
+                }
 
 
                 function addieren(parameter1, parameter2){
